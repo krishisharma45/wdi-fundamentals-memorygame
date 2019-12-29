@@ -1,4 +1,4 @@
-const cards = [
+var cards = [
 //queen of hearts
 {
 	rank: "queen",
@@ -26,7 +26,7 @@ const cards = [
 ];
 
 
-const cardsInPlay = [];
+var cardsInPlay = [];
 
 function checkForMatch() {
 	if(cardsInPlay [0] === cardsInPlay[1]){
@@ -37,13 +37,29 @@ function checkForMatch() {
 	}
 }
 
-function flipCard(cardID){
-	let playCard = cardID;
-	cardsInPlay.push(playCard.rank);
-	console.log("User flipped " + playCard.rank + " of " + cardID.suit);
-	console.log(cardID.cardImage);
+function createBoard(){
+	const gameBoard = document.getElementById('game-board');
+	for (let i=0; i < cards.length ; i++){
+		var cardElement = document.createElement('img');
+		cardElement.setAttribute('src', 'images/back.png');
+		cardElement.setAttribute('data-id', 'i');
+		cardElement.addEventListener("click", flipCard);
+		gameBoard.appendChild(cardElement);
+	}
 }
 
-flipCard(cards[0]);
-flipCard(cards[2]);
-checkForMatch();
+function flipCard(cardId) {
+	var cardID = this.setAttribute('data-id', 'i');
+	cardsInPlay.push(cards[cardID].rank);
+ this.setAttribute('src', 'cards[cardID].cardImage');
+ if (cardsInPlay.length === 2){
+    checkForMatch();
+    //cardsInPlay = [];
+ };
+};
+
+
+
+
+
+createBoard();
