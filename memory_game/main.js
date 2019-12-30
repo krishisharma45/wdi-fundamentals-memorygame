@@ -51,8 +51,8 @@ function createBoard(){
 function flipCard(cardId) {
 	var cardID = this.setAttribute('data-id', 'i');
 	cardsInPlay.push(cards[cardID].rank);
- this.setAttribute('src', 'cards[cardID].cardImage');
- if (cardsInPlay.length === 2){
+ 	this.setAttribute('src', 'cards[cardID].cardImage');
+ 	if (cardsInPlay.length === 2){
     checkForMatch();
     //cardsInPlay = [];
  };
