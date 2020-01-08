@@ -47,17 +47,6 @@ function createBoard(){
 		gameBoard.appendChild(cardElement);
 	};
 };
-/*
-function flipCard(cardId) {
-	var cardID = this.setAttribute('data-id', 'i');
-	cardsInPlay.push(cards[cardID].rank);
- 	this.setAttribute('src', 'cards[cardID].cardImage');
- 	if (cardsInPlay.length === 2){
-    checkForMatch();
-    //cardsInPlay = [];
- };
-};
-*/
 
 //1. set cardID to index number of the cards array
 //2. push the card's rank into cardsInPlay array (cards[cardID].rank)
@@ -71,7 +60,6 @@ function flipCard(){
 	if(cardsInPlay.length === 2){
 		checkForMatch();
 	};
-
 };
 
 createBoard();
